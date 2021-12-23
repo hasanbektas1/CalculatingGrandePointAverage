@@ -2,11 +2,11 @@
 
 Bu projemizde Not ortalaması hesaplama yapacagız 
 Öncelikle xml kısmında 
-3 adet EditText girilecek notlar için
+3 adet EditText oluşuruyoruz girilecek notlar için
 2 adet Button Hesaplama için ve ekranı temizlemek için
 1 adet Textview ortalama sonucunu göstermek için veya kullanıcıya herhangi bir mesaj verebilmek için
 Oluşturduktan sonra düzenli bir sıra halinde alt alta olması için LinearLayout kullanıyoruz
-Daha sonra MainActivitySınıfımız içerisinde olayları yazıyoruz
+Daha sonra MainActivity Sınıfımız içerisinde olayları yazıyoruz
 İlk önce girilen notlardan sonra hesaplama butonuna tıklayınca ne olacagını yazıyoruz
 Hesaplama butonunu setOnClickListener yöntemi ile yazıyoruz
 İf koşuluyla bütün not yazılma alanları dolduruldu mu kontrol ediyoruz 
