@@ -15,6 +15,7 @@ daha sonra kullanıcının girdigi verileri degişkenlerimize atıyoruz
 alınan verileri toplayıp 3e böldükten sonra ortalama degişkenimize atıyoruz sonucu
 sonra tekrar if kontorolümüz ile ortalama notunu 50den yüksek ise
 yeşil yazıyla ekrana yazdırıyoruz degilse kırmızı yazıyla yazdırıyoruz
+Renkleri Values klasörü altında color.xml kısmında kendimiz oluşturuyoruz daha sonra oradan çekiyoruz
 Ve son olarak ekranı temizleme butonumuz için clean fonksiyonumuzu oluşturuyoruz
 fonksiyon olarak yazmamızın sebebi bu fonksiyon  xml kısmından çagırılacagı için 
 iki yönteminde içine tıklanınca ne olacagını yazabiliyoruz 
