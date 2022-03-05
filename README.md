@@ -2,7 +2,7 @@
 
 Kullanıcı tarafından girilen 3 adet notun ortalamasını bulup sonucu gösteren uygulamamız.
 
-![deneme](https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/62/6f/ca/626fca43-33f6-27b9-39a1-685715fcd1bd/source/256x256bb.jpg)
+![Error](https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/62/6f/ca/626fca43-33f6-27b9-39a1-685715fcd1bd/source/256x256bb.jpg)
 
 
 ## Geliştirme Adımları
