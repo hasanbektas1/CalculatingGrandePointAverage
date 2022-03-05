@@ -47,6 +47,15 @@ Oluşturulan araçların vertical(dikey) bir düzen içerisinde olması için Li
             android:textSize="30sp"
             android:gravity="center"
             android:layout_marginTop="30dp"/>
+            
+             <Button
+            android:id="@+id/cleanButton"
+            android:onClick="clean"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clean"
+            android:layout_marginTop="100dp"/>
 
     </LinearLayout>
 
@@ -97,30 +106,29 @@ if koşulu sağlanmadıgı takdirde else bloğu içerisinde ortalamanın 50'den 
                     }
 ```
 
-Sağlanan koşullar durumunda TextView'e yazdırılan sonucu 50'ye eşit ve yüksek ise yeşil 50'den düşük ise kırmızı renk ile yazdırıyoruz
+Sağlanan koşullar durumunda TextView'e yazdırılan sonucu 50'ye eşit veya yüksek ise yeşil 50'den düşük ise kırmızı renk ile yazdırıyoruz
 Renkleri oluşturmak için values > color.xml  içerisinde yapıyoruz
 
+setOnClickListener içerisinde ilk kontrol ettiğimiz if() durumunda kullanıcı EditText'leri eksik girdiğinde resultText ekranında kullanıcıya bilgi mesajı gösteriyoruz.
+```
+else{
+                binding.resultText.text="fill in all fields"
+            }
+```
 
-Bu projemizde Not ortalaması hesaplama yapacagız 
-Öncelikle xml kısmında 
-3 adet EditText oluşuruyoruz girilecek notlar için
-2 adet Button Hesaplama için ve ekranı temizlemek için
-1 adet Textview ortalama sonucunu göstermek için veya kullanıcıya herhangi bir mesaj verebilmek için
-Oluşturduktan sonra düzenli bir sıra halinde alt alta olması için LinearLayout kullanıyoruz
-Daha sonra MainActivity Sınıfımız içerisinde olayları yazıyoruz
-İlk önce girilen notlardan sonra hesaplama butonuna tıklayınca ne olacagını yazıyoruz
-Hesaplama butonunu setOnClickListener yöntemi ile yazıyoruz
-İf koşuluyla bütün not yazılma alanları dolduruldu mu kontrol ediyoruz 
-else kısmı ile boş alan bıraktıgında kullanıcıya boşlukları doldurması için mesaj veriyoruz
-daha sonra kullanıcının girdigi verileri degişkenlerimize atıyoruz
-alınan verileri toplayıp 3e böldükten sonra ortalama degişkenimize atıyoruz sonucu
-sonra tekrar if kontorolümüz ile ortalama notunu 50den yüksek ise
-yeşil yazıyla ekrana yazdırıyoruz degilse kırmızı yazıyla yazdırıyoruz
-Renkleri Values klasörü altında color.xml kısmında kendimiz oluşturuyoruz daha sonra oradan çekiyoruz
-Ve son olarak ekranı temizleme butonumuz için clean fonksiyonumuzu oluşturuyoruz
-fonksiyon olarak yazmamızın sebebi bu fonksiyon  xml kısmından çagırılacagı için 
-iki yönteminde içine tıklanınca ne olacagını yazabiliyoruz 
+Son olarak kullanıcının girdilerini alıp hesaplayıp ekranda gösterdikten sonra tekrar bir hesaplama yapabilmesi için ekranı temizleyip ilk haline dönderiyoruz.
 
-Saygılar
-Hasan Bektaş
+Temizleme butonunu görünüm tarafından yani xml tarafından çağırılan bir fonksiyon olarak MainActivity sınıfımızın içinde ama onCreate fonksiyonun dışında yazıyoruz. Hesaplama butonundaki gibi tıklanınca ne olacagını yazabilmemiz için farklı bir yöntem. İstenilen duruma göre her ikiside kullanılabilir.
+
+Temizleme butonunu activity_main.xml içerisinde tasarlarken **onClick** metoduna verilen isimle MainActivity sınıfı içerisinde oluşturulan fonksiyon ismi aynı olmalı ve **fun clean (view : View) {** görünüm tarafından çağırılacagını belirtmek için View parametresi verilmeli.
+```
+ fun clean (view : View) {
+        binding.examText.text.clear()
+        binding.examText2.text.clear()
+        binding.examText3.text.clear()
+        binding.resultText.setText("")
+    }
+```
+Artık programımız çalışmaya hazır.
+
 
