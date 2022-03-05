@@ -1,6 +1,6 @@
 # CalculatingGrandePointAverage
 
-Girilen 3 adet notun ortalamasını bulup sonucu gösteren uygulamamız.
+Kullanıcı tarafından girilen 3 adet notun ortalamasını bulup sonucu gösteren uygulamamız.
 
 
 ## Geliştirme Adımları
@@ -8,9 +8,9 @@ Girilen 3 adet notun ortalamasını bulup sonucu gösteren uygulamamız.
 Öncelikle activity_main.xml dosyası tasarımımızı yapıyoruz.
 
 
-3 adet **EditText** kullanıcıdan girdi alınabilecek 
-2 adet **buton** hesaplama ve ekranı temizlemek için
-1 adet **TextView** hesaplanan sonucun yazdırılması için
+- 3 adet **EditText** kullanıcıdan girdi alınabilecek 
+- 2 adet **Buttton** hesaplama ve ekranı temizlemek için
+- 1 adet **TextView** hesaplanan sonucun yazdırılması için
 
 Oluşturulan araçların vertical(dikey) bir düzen içerisinde olması için LinearLayout içine yazıyoruz
 
@@ -67,7 +67,7 @@ Kısmından tümüne ulaşabilirsiniz
 
 activity_main.xml tasarımımız bu kadardı şimdi MainActivity.kt sınıfımızın içinde kodlarımızı yazıyoruz
 
-Şimdi ilk olarak butonumuza verdiğimiz id'si ile setOnClickListener diyip açılan body içerisinde butona tıklanınca ne olacağını yazıyoruz
+İlk olarak **onCreate** fonksiyonu içerisinde butonumuza verdiğimiz id'si ile **setOnClickListener** diyip açılan body içerisinde butona tıklanınca ne olacağını yazıyoruz
 ```
 binding.calculateButton.setOnClickListener {
         .
@@ -84,7 +84,7 @@ if (binding.examText.text.isNotEmpty() && binding.examText2.text.isNotEmpty() &&
         .        
 ```
 
-if bloğunun içerisinde kullanıcıdan alınan girdileri degişkene aktarıyoruz
+**if** bloğunun içerisinde kullanıcıdan alınan girdileri degişkene aktarıyoruz
 Alınan girdiler ile not orlamasınıda hesapladıktan sonra onuda degişkene aktarıyoruz
 ```
                 var exam1 = binding.examText.text.toString().toInt()
@@ -109,7 +109,7 @@ if koşulu sağlanmadıgı takdirde else bloğu içerisinde ortalamanın 50'den 
 Sağlanan koşullar durumunda TextView'e yazdırılan sonucu 50'ye eşit veya yüksek ise yeşil 50'den düşük ise kırmızı renk ile yazdırıyoruz
 Renkleri oluşturmak için values > color.xml  içerisinde yapıyoruz
 
-setOnClickListener içerisinde ilk kontrol ettiğimiz if() durumunda kullanıcı EditText'leri eksik girdiğinde resultText ekranında kullanıcıya bilgi mesajı gösteriyoruz.
+**setOnClickListener** içerisinde ilk kontrol ettiğimiz **if()** durumunda kullanıcı EditText'leri eksik girdiğinde resultText ekranında kullanıcıya bilgi mesajı gösteriyoruz.
 ```
 else{
                 binding.resultText.text="fill in all fields"
